@@ -9,19 +9,21 @@
 /* Begin PBXBuildFile section */
 		A35A4011256E9A250010955D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A4010256E9A250010955D /* AppDelegate.swift */; };
 		A35A4013256E9A250010955D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A4012256E9A250010955D /* SceneDelegate.swift */; };
-		A35A4015256E9A250010955D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A4014256E9A250010955D /* ViewController.swift */; };
 		A35A401A256E9A260010955D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A35A4019256E9A260010955D /* Assets.xcassets */; };
 		A35A401D256E9A260010955D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A35A401B256E9A260010955D /* LaunchScreen.storyboard */; };
+		A35A4029256EA8810010955D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A4028256EA8810010955D /* SearchViewController.swift */; };
+		A35A402C256EA8AE0010955D /* FavoritesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A402B256EA8AE0010955D /* FavoritesListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A35A400D256E9A250010955D /* GHFollowers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GHFollowers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A35A4010256E9A250010955D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A35A4012256E9A250010955D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A35A4014256E9A250010955D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A35A4019256E9A260010955D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A35A401C256E9A260010955D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A35A401E256E9A260010955D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A35A4028256EA8810010955D /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		A35A402B256EA8AE0010955D /* FavoritesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +58,11 @@
 			children = (
 				A35A4010256E9A250010955D /* AppDelegate.swift */,
 				A35A4012256E9A250010955D /* SceneDelegate.swift */,
-				A35A4014256E9A250010955D /* ViewController.swift */,
 				A35A4019256E9A260010955D /* Assets.xcassets */,
 				A35A401B256E9A260010955D /* LaunchScreen.storyboard */,
 				A35A401E256E9A260010955D /* Info.plist */,
+				A35A4028256EA8810010955D /* SearchViewController.swift */,
+				A35A402B256EA8AE0010955D /* FavoritesListViewController.swift */,
 			);
 			path = GHFollowers;
 			sourceTree = "<group>";
@@ -133,8 +136,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A35A4015256E9A250010955D /* ViewController.swift in Sources */,
+				A35A4029256EA8810010955D /* SearchViewController.swift in Sources */,
 				A35A4011256E9A250010955D /* AppDelegate.swift in Sources */,
+				A35A402C256EA8AE0010955D /* FavoritesListViewController.swift in Sources */,
 				A35A4013256E9A250010955D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
