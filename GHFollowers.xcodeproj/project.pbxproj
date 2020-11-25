@@ -10,7 +10,6 @@
 		A35A4011256E9A250010955D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A4010256E9A250010955D /* AppDelegate.swift */; };
 		A35A4013256E9A250010955D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A4012256E9A250010955D /* SceneDelegate.swift */; };
 		A35A4015256E9A250010955D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A4014256E9A250010955D /* ViewController.swift */; };
-		A35A4018256E9A250010955D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A35A4016256E9A250010955D /* Main.storyboard */; };
 		A35A401A256E9A260010955D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A35A4019256E9A260010955D /* Assets.xcassets */; };
 		A35A401D256E9A260010955D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A35A401B256E9A260010955D /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -20,7 +19,6 @@
 		A35A4010256E9A250010955D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A35A4012256E9A250010955D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A35A4014256E9A250010955D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A35A4017256E9A250010955D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A35A4019256E9A260010955D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A35A401C256E9A260010955D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A35A401E256E9A260010955D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,7 +57,6 @@
 				A35A4010256E9A250010955D /* AppDelegate.swift */,
 				A35A4012256E9A250010955D /* SceneDelegate.swift */,
 				A35A4014256E9A250010955D /* ViewController.swift */,
-				A35A4016256E9A250010955D /* Main.storyboard */,
 				A35A4019256E9A260010955D /* Assets.xcassets */,
 				A35A401B256E9A260010955D /* LaunchScreen.storyboard */,
 				A35A401E256E9A260010955D /* Info.plist */,
@@ -126,7 +123,6 @@
 			files = (
 				A35A401D256E9A260010955D /* LaunchScreen.storyboard in Resources */,
 				A35A401A256E9A260010955D /* Assets.xcassets in Resources */,
-				A35A4018256E9A250010955D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,14 +142,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A35A4016256E9A250010955D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A35A4017256E9A250010955D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A35A401B256E9A260010955D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -289,6 +277,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TD4Q99PXA9;
 				INFOPLIST_FILE = GHFollowers/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,7 +285,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.risingdevhabits.GHFollowers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -308,6 +297,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TD4Q99PXA9;
 				INFOPLIST_FILE = GHFollowers/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,7 +305,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.risingdevhabits.GHFollowers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
