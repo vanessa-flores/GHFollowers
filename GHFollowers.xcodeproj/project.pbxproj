@@ -15,6 +15,7 @@
 		A35A402C256EA8AE0010955D /* FavoritesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A402B256EA8AE0010955D /* FavoritesListViewController.swift */; };
 		A35A4030256EC11A0010955D /* GFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A402F256EC11A0010955D /* GFButton.swift */; };
 		A35A4033256EC3CC0010955D /* GFTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A4032256EC3CC0010955D /* GFTextField.swift */; };
+		A35A4036256EE8100010955D /* FollowersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A4035256EE8100010955D /* FollowersListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		A35A402B256EA8AE0010955D /* FavoritesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewController.swift; sourceTree = "<group>"; };
 		A35A402F256EC11A0010955D /* GFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFButton.swift; sourceTree = "<group>"; };
 		A35A4032256EC3CC0010955D /* GFTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTextField.swift; sourceTree = "<group>"; };
+		A35A4035256EE8100010955D /* FollowersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				A35A402B256EA8AE0010955D /* FavoritesListViewController.swift */,
 				A35A402F256EC11A0010955D /* GFButton.swift */,
 				A35A4032256EC3CC0010955D /* GFTextField.swift */,
+				A35A4035256EE8100010955D /* FollowersListViewController.swift */,
 			);
 			path = GHFollowers;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 				A35A4033256EC3CC0010955D /* GFTextField.swift in Sources */,
 				A35A4029256EA8810010955D /* SearchViewController.swift in Sources */,
 				A35A4030256EC11A0010955D /* GFButton.swift in Sources */,
+				A35A4036256EE8100010955D /* FollowersListViewController.swift in Sources */,
 				A35A4011256E9A250010955D /* AppDelegate.swift in Sources */,
 				A35A402C256EA8AE0010955D /* FavoritesListViewController.swift in Sources */,
 				A35A4013256E9A250010955D /* SceneDelegate.swift in Sources */,
