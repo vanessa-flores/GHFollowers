@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A35971FF25705A0700F3769D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35971FE25705A0700F3769D /* NetworkManager.swift */; };
+		A359720425706D2200F3769D /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A359720325706D2200F3769D /* ErrorMessage.swift */; };
 		A35A4011256E9A250010955D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A4010256E9A250010955D /* AppDelegate.swift */; };
 		A35A4013256E9A250010955D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A4012256E9A250010955D /* SceneDelegate.swift */; };
 		A35A401A256E9A260010955D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A35A4019256E9A260010955D /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		A35971FE25705A0700F3769D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		A359720325706D2200F3769D /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		A35A400D256E9A250010955D /* GHFollowers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GHFollowers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A35A4010256E9A250010955D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A35A4012256E9A250010955D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +69,14 @@
 			path = "Network Manager";
 			sourceTree = "<group>";
 		};
+		A359720225706D1000F3769D /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A359720325706D2200F3769D /* ErrorMessage.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		A35A4004256E9A250010955D = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +96,7 @@
 		A35A400F256E9A250010955D /* GHFollowers */ = {
 			isa = PBXGroup;
 			children = (
+				A359720225706D1000F3769D /* Utilities */,
 				A35971FD2570599300F3769D /* Network Manager */,
 				A3F3DF4B25703C2C00B1F8A4 /* Model */,
 				A35A404B256F1E680010955D /* Support */,
@@ -229,6 +240,7 @@
 				A35A403D256F115B0010955D /* GFBodyLabel.swift in Sources */,
 				A35A4039256F02140010955D /* GFTitleLabel.swift in Sources */,
 				A35A4011256E9A250010955D /* AppDelegate.swift in Sources */,
+				A359720425706D2200F3769D /* ErrorMessage.swift in Sources */,
 				A35971FF25705A0700F3769D /* NetworkManager.swift in Sources */,
 				A35A402C256EA8AE0010955D /* FavoritesListViewController.swift in Sources */,
 				A35A4013256E9A250010955D /* SceneDelegate.swift in Sources */,
