@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A35971FF25705A0700F3769D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35971FE25705A0700F3769D /* NetworkManager.swift */; };
 		A359720425706D2200F3769D /* GFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A359720325706D2200F3769D /* GFError.swift */; };
+		A359720A25714FCF00F3769D /* FollowerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A359720925714FCF00F3769D /* FollowerCell.swift */; };
+		A359720E2571504E00F3769D /* GFAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A359720D2571504E00F3769D /* GFAvatarImageView.swift */; };
 		A35A4011256E9A250010955D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A4010256E9A250010955D /* AppDelegate.swift */; };
 		A35A4013256E9A250010955D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A4012256E9A250010955D /* SceneDelegate.swift */; };
 		A35A401A256E9A260010955D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A35A4019256E9A260010955D /* Assets.xcassets */; };
@@ -30,6 +32,8 @@
 /* Begin PBXFileReference section */
 		A35971FE25705A0700F3769D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A359720325706D2200F3769D /* GFError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFError.swift; sourceTree = "<group>"; };
+		A359720925714FCF00F3769D /* FollowerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCell.swift; sourceTree = "<group>"; };
+		A359720D2571504E00F3769D /* GFAvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAvatarImageView.swift; sourceTree = "<group>"; };
 		A35A400D256E9A250010955D /* GHFollowers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GHFollowers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A35A4010256E9A250010955D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A35A4012256E9A250010955D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +81,14 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		A359720825714FAD00F3769D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A359720925714FCF00F3769D /* FollowerCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		A35A4004256E9A250010955D = {
 			isa = PBXGroup;
 			children = (
@@ -121,12 +133,14 @@
 		A35A4049256F1DC10010955D /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				A359720825714FAD00F3769D /* Cells */,
 				A35A403F256F134B0010955D /* GFAlertViewController.swift */,
 				A35A4045256F1C090010955D /* GFAlertContainerView.swift */,
 				A35A402F256EC11A0010955D /* GFButton.swift */,
 				A35A4032256EC3CC0010955D /* GFTextField.swift */,
 				A35A4038256F02140010955D /* GFTitleLabel.swift */,
 				A35A403C256F115B0010955D /* GFBodyLabel.swift */,
+				A359720D2571504E00F3769D /* GFAvatarImageView.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -235,6 +249,8 @@
 				A35A4043256F191E0010955D /* UIViewController+Ext.swift in Sources */,
 				A35A4030256EC11A0010955D /* GFButton.swift in Sources */,
 				A3F3DF5125703F6B00B1F8A4 /* User.swift in Sources */,
+				A359720A25714FCF00F3769D /* FollowerCell.swift in Sources */,
+				A359720E2571504E00F3769D /* GFAvatarImageView.swift in Sources */,
 				A35A4036256EE8100010955D /* FollowersListViewController.swift in Sources */,
 				A3F3DF4D25703C3700B1F8A4 /* Follower.swift in Sources */,
 				A35A403D256F115B0010955D /* GFBodyLabel.swift in Sources */,
