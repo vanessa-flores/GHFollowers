@@ -5,13 +5,15 @@
 //  Created by Vanessa Flores on 11/26/20.
 //
 
-import Foundation
+import UIKit
 
 class NetworkManager {
     
     static let shared = NetworkManager()
-    let baseURL = "https://api.github.com"
+    private let baseURL = "https://api.github.com"
     let perPageFollowers = 100
+    
+    let cache = NSCache<NSString, UIImage>()
     
     private init() {}
     
