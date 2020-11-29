@@ -23,6 +23,7 @@ class FollowersListViewController: GFDataLoadingViewController {
     var page: Int = 1
     var hasMoreFollowers: Bool = true
     var isSearching: Bool = false
+    var isLoadingMoreFollowers: Bool = false
     
     weak var delegate: FollowersListViewControllerDelegate?
     
@@ -60,6 +61,8 @@ class FollowersListViewController: GFDataLoadingViewController {
     
     private func getFollowers(username: String, page: Int) {
         showLoadingView()
+        isLoadingMoreFollowers = true
+        
         NetworkManager.shared.getFollowers(for: username, page: page) { [weak self] result in
             guard let self = self else { return }
             self.dismissLoadingView() 
@@ -83,6 +86,7 @@ class FollowersListViewController: GFDataLoadingViewController {
                 self.presentGFAlertOnMainThread(title: "Bad Stuff Happened", message: error.rawValue, buttonTitle: "Ok")
             }
             
+            self.isLoadingMoreFollowers = false
         }
     }
     
@@ -167,13 +171,13 @@ class FollowersListViewController: GFDataLoadingViewController {
 
 extension FollowersListViewController: UICollectionViewDelegate {
     
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
         let height = scrollView.frame.size.height
         
         if offsetY > contentHeight - height {
-            guard hasMoreFollowers else { return }
+            guard hasMoreFollowers, !isLoadingMoreFollowers else { return }
             page += 1
             getFollowers(username: username, page: page)
         }
