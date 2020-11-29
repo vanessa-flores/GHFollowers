@@ -26,6 +26,7 @@
 		A35972442573F01B00F3769D /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35972432573F01B00F3769D /* PersistenceManager.swift */; };
 		A359724725740A6D00F3769D /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A359724625740A6D00F3769D /* FavoriteCell.swift */; };
 		A359724A25742A3F00F3769D /* GFTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A359724925742A3F00F3769D /* GFTabBarController.swift */; };
+		A35972502574502100F3769D /* GFDataLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A359724F2574502100F3769D /* GFDataLoadingViewController.swift */; };
 		A35A4011256E9A250010955D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A4010256E9A250010955D /* AppDelegate.swift */; };
 		A35A4013256E9A250010955D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A4012256E9A250010955D /* SceneDelegate.swift */; };
 		A35A401A256E9A260010955D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A35A4019256E9A260010955D /* Assets.xcassets */; };
@@ -64,6 +65,7 @@
 		A35972432573F01B00F3769D /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		A359724625740A6D00F3769D /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		A359724925742A3F00F3769D /* GFTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTabBarController.swift; sourceTree = "<group>"; };
+		A359724F2574502100F3769D /* GFDataLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFDataLoadingViewController.swift; sourceTree = "<group>"; };
 		A35A400D256E9A250010955D /* GHFollowers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GHFollowers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A35A4010256E9A250010955D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A35A4012256E9A250010955D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				A359723625731B2C00F3769D /* ItemInfoViewControllers */,
 				A35A403F256F134B0010955D /* GFAlertViewController.swift */,
 				A35972212572E1CC00F3769D /* GFUserInfoHeaderViewController.swift */,
+				A359724F2574502100F3769D /* GFDataLoadingViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				A359721B2571D89F00F3769D /* GFEmptyStateView.swift in Sources */,
 				A35972252572E23600F3769D /* GFSecondaryTitleLabel.swift in Sources */,
 				A35A4030256EC11A0010955D /* GFButton.swift in Sources */,
+				A35972502574502100F3769D /* GFDataLoadingViewController.swift in Sources */,
 				A3F3DF5125703F6B00B1F8A4 /* User.swift in Sources */,
 				A359720A25714FCF00F3769D /* FollowerCell.swift in Sources */,
 				A35972442573F01B00F3769D /* PersistenceManager.swift in Sources */,
