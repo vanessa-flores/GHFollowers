@@ -35,7 +35,7 @@ class SearchViewController: UIViewController {
     }
     
     func createDismissKeyboardTapGesture() {
-        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
     }
     
@@ -46,11 +46,15 @@ class SearchViewController: UIViewController {
             return
         }
         
-        let followerListViewController = FollowersListViewController()
-        followerListViewController.username = usernameTextField.text
-        followerListViewController.title = usernameTextField.text
+        let followerListViewController = FollowersListViewController(username: usernameTextField.text ?? "")
+        resetTextField()
         
         navigationController?.pushViewController(followerListViewController, animated: true)
+    }
+    
+    private func resetTextField() {
+        usernameTextField.resignFirstResponder()
+        usernameTextField.text = ""
     }
     
     // MARK: - UI Configuration
@@ -58,7 +62,7 @@ class SearchViewController: UIViewController {
     func configureLogoImageView() {
         view.addSubview(logoImageView)
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
-        logoImageView.image = UIImage(named: "gh-logo")!
+        logoImageView.image = Images.ghLogo
         
         let topConstraintConstant: CGFloat = DeviceTypes.isiPhoneSE || DeviceTypes.isiPhone8Zoomed ? 20 : 80
         logoImageViewTopConstraint = logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: topConstraintConstant)

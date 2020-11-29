@@ -17,7 +17,7 @@ class FollowersListViewController: UIViewController {
         case main
     }
     
-    var username: String!
+    var username: String
     var followers: [Follower] = []
     var filteredFollowers: [Follower] = []
     var page: Int = 1
@@ -28,7 +28,18 @@ class FollowersListViewController: UIViewController {
     
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
-
+    
+    init(username: String) {
+        self.username = username
+        
+        super.init(nibName: nil, bundle: nil)
+        title = username
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
