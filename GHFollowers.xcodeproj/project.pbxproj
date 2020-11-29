@@ -189,18 +189,18 @@
 		A35972402573EFEF00F3769D /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				A35972422573F00800F3769D /* Persistence */,
+				A35972422573F00800F3769D /* Local */,
 				A35971FD2570599300F3769D /* Network Manager */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
 		};
-		A35972422573F00800F3769D /* Persistence */ = {
+		A35972422573F00800F3769D /* Local */ = {
 			isa = PBXGroup;
 			children = (
 				A35972432573F01B00F3769D /* PersistenceManager.swift */,
 			);
-			path = Persistence;
+			path = Local;
 			sourceTree = "<group>";
 		};
 		A359724C25742B5900F3769D /* TabBarController */ = {

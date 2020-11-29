@@ -92,6 +92,7 @@ class NetworkManager {
                 
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .useDefaultKeys
+                decoder.dateDecodingStrategy = .iso8601
                 let user = try decoder.decode(User.self, from: data)
                 completion(.success(user))
                 

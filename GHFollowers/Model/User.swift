@@ -19,7 +19,7 @@ struct User: Codable {
     var profile: String?
     var following: Int?
     var followers: Int?
-    var createdAt: String?
+    var createdAt: Date?
     
     enum CodingKeys: String, CodingKey {
         case username       = "login"
