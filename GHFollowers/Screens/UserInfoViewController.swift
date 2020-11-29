@@ -48,7 +48,7 @@ class UserInfoViewController: UIViewController {
                     self.add(childViewController: GFUserInfoHeaderViewController(user: user), to: self.headerView)
                     self.add(childViewController: GFRepoItemViewController(user: user), to: self.itemViewOne)
                     self.add(childViewController: GFFollowerItemViewController(user: user), to: self.itemViewTwo)
-                    self.dateLabel.text = user.createdAt
+                    self.dateLabel.text = "GitHub since \(user.createdAt?.convertToDisplayFormat() ?? "")"
                 }
                 
             case .failure(let error):
