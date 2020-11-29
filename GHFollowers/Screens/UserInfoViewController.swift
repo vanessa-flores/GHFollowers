@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SafariServices
 
 class UserInfoViewController: UIViewController {
     
@@ -115,9 +114,7 @@ extension UserInfoViewController: GFItemInfoViewControllerDelegate {
             return
         }
         
-        let safariViewController = SFSafariViewController(url: url)
-        safariViewController.preferredControlTintColor = .systemGreen
-        present(safariViewController, animated: true)
+        presentSafariViewController(with: url)
     }
     
     func didTapGetFollowers(for user: User) {
