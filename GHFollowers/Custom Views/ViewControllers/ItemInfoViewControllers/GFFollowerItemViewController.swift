@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol GFFollowerItemViewControllerDelegate: class {
+    func didTapGetFollowers(for user: User)
+}
+
 class GFFollowerItemViewController: GFItemInfoViewController {
+    
+    weak var delegate: GFFollowerItemViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()

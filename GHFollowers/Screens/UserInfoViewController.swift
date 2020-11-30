@@ -109,9 +109,9 @@ class UserInfoViewController: GFDataLoadingViewController {
     }
 }
 
-// MARK: - GFItemInfoViewControllerDelegate
+// MARK: - GFRepoItemViewControllerDelegate & GFFollowerItemViewControllerDelegate
 
-extension UserInfoViewController: ItemInfoViewControllerDelegate {
+extension UserInfoViewController: GFRepoItemViewControllerDelegate, GFFollowerItemViewControllerDelegate {
     func didTapGitHubProfile(for user: User) {
         guard let url = URL(string: user.profile ?? "") else {
             presentGFAlertOnMainThread(title: "Invalid URL", message: "The url attached to this user is invalid.", buttonTitle: "Ok")
