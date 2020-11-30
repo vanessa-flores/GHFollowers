@@ -163,6 +163,7 @@ class FollowersListViewController: GFDataLoadingViewController {
         let searchController = UISearchController()
         searchController.searchResultsUpdater = self
         searchController.searchBar.placeholder = "Search for a username"
+        searchController.obscuresBackgroundDuringPresentation = false
         navigationItem.searchController = searchController
     }
 }
@@ -181,7 +182,7 @@ extension FollowersListViewController: UICollectionViewDelegate {
             page += 1
             getFollowers(username: username, page: page)
         }
-        }
+    }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let activeArray = isSearching ? filteredFollowers : followers
@@ -207,8 +208,8 @@ extension FollowersListViewController: UISearchResultsUpdating {
             
             return
         }
-        isSearching = true
         
+        isSearching = true
         filteredFollowers = followers.filter({ follower in
             guard let username = follower.username else {
                 return false
