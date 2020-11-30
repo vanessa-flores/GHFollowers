@@ -9,16 +9,22 @@ import UIKit
 
 class GFAlertViewController: UIViewController {
     
+    // MARK: - Views
+    
     let containerView = GFAlertContainerView()
     let titleLabel = GFTitleLabel(textAlignment: .center, fontSize: 20)
     let messageLabel = GFBodyLabel(textAlignment: .center)
     let actionButton = GFButton(backgroundColor: .systemPink, title: "Ok")
+    
+    // MARK: - Properties
     
     var alertTitle: String?
     var message: String?
     var buttonTitle: String?
     
     let padding: CGFloat = 20
+    
+    // MARK: - Initializers
     
     init(title: String, message: String, buttonTitle: String) {
         super.init(nibName: nil, bundle: nil)
@@ -32,6 +38,8 @@ class GFAlertViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,6 +52,8 @@ class GFAlertViewController: UIViewController {
         configureActionButton()
         configureMessageLabel()
     }
+    
+    // MARK: - UI Configuration
     
     func configureContainerView() {        
         NSLayoutConstraint.activate([
@@ -77,10 +87,6 @@ class GFAlertViewController: UIViewController {
         ])
     }
     
-    @objc func dismissViewController() {
-        dismiss(animated: true)
-    }
-    
     func configureMessageLabel() {
         messageLabel.text = message ?? "Unable to complete request"
         messageLabel.numberOfLines = 4
@@ -91,6 +97,12 @@ class GFAlertViewController: UIViewController {
             messageLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -padding),
             messageLabel.bottomAnchor.constraint(equalTo: actionButton.topAnchor, constant: -12)
         ])
+    }
+    
+    // MARK: - Actions
+    
+    @objc func dismissViewController() {
+        dismiss(animated: true)
     }
 
 }

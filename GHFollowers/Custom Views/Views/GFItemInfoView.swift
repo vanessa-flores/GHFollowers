@@ -13,9 +13,13 @@ enum ItemInfoType {
 
 class GFItemInfoView: UIView {
 
+    // MARK: - Views
+    
     let symbolImageView = UIImageView()
     let titleLabel = GFTitleLabel(textAlignment: .left, fontSize: 14)
     let countLabel = GFTitleLabel(textAlignment: .center, fontSize: 14)
+    
+    // MARK: - Initializers
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,6 +30,8 @@ class GFItemInfoView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - UI Configuration
     
     private func configure() {
         addSubviews(symbolImageView, titleLabel, countLabel)
@@ -51,6 +57,8 @@ class GFItemInfoView: UIView {
             countLabel.heightAnchor.constraint(equalToConstant: 18)
         ])
     }
+    
+    // MARK: - Helpers
     
     func set(itemInfoType: ItemInfoType, withCount count: Int) {
         switch itemInfoType {

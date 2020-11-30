@@ -9,9 +9,16 @@ import UIKit
 
 class FavoritesListViewController: GFDataLoadingViewController {
     
+    // MARK: - Views
+    
     let tableView = UITableView()
+    
+    // MARK: - Properties
+    
     var favorites: [Follower] = []
 
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,16 +28,17 @@ class FavoritesListViewController: GFDataLoadingViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         getFavorites()
     }
+    
+    // MARK: - Configure UI
     
     private func configureViewController() {
         view.backgroundColor = .systemBackground
         title = "Favorites"
         navigationController?.navigationBar.prefersLargeTitles = true
     }
-    
-    // MARK: - Configure UI
     
     private func configureTableView() {
         view.addSubview(tableView)
@@ -44,7 +52,7 @@ class FavoritesListViewController: GFDataLoadingViewController {
         tableView.register(FavoriteCell.self, forCellReuseIdentifier: FavoriteCell.reuseID)
     }
     
-    // MARK: - Network Call
+    // MARK: - Network
     
     private func getFavorites() {
         PersistenceManager.retrieveFavorites { [weak self] result in
@@ -52,12 +60,7 @@ class FavoritesListViewController: GFDataLoadingViewController {
             
             switch result {
             case .success(let favorites):
-                if favorites.isEmpty {
-                    self.showEmptyStateView(with: "No Favorites?\nAdd one on the Follower screen", in: self.view)
-                } else {
-                    self.favorites = favorites
-                    self.displayFavorites()
-                }
+                self.updateUI(with: favorites)
                 
             case .failure(let error):
                 self.presentGFAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
@@ -65,7 +68,23 @@ class FavoritesListViewController: GFDataLoadingViewController {
         }
     }
     
-    private func displayFavorites() {
+    // MARK: - Helpers
+    
+    private func updateUI(with favorites: [Follower]) {
+        if favorites.isEmpty {
+            showEmptyState()
+        } else {
+            showFavorites(with: favorites)
+        }
+    }
+    
+    private func showEmptyState() {
+        showEmptyStateView(with: "No Favorites?\nAdd one on the Follower screen", in: self.view)
+    }
+    
+    private func showFavorites(with favorites: [Follower]) {
+        self.favorites = favorites
+        
         DispatchQueue.main.async {
             self.tableView.reloadData()
             self.view.bringSubviewToFront(self.tableView)
@@ -105,6 +124,7 @@ extension FavoritesListViewController: UITableViewDataSource, UITableViewDelegat
                 tableView.deleteRows(at: [indexPath], with: .left)
                 return
             }
+            
             self.presentGFAlertOnMainThread(title: "Unable to remove", message: error.rawValue, buttonTitle: "Ok")
         }
     }

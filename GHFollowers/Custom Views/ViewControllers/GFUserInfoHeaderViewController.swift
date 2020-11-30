@@ -9,7 +9,7 @@ import UIKit
 
 class GFUserInfoHeaderViewController: UIViewController {
     
-    // MARK: - UI Elements
+    // MARK: - Views
     
     let avatarImageView = GFAvatarImageView(frame: .zero)
     let usernameLabel = GFTitleLabel(textAlignment: .left, fontSize: 34)
@@ -18,7 +18,11 @@ class GFUserInfoHeaderViewController: UIViewController {
     let locationLabel = GFSecondaryTitleLabel(fontSize: 18)
     let bioLabel = GFBodyLabel(textAlignment: .left)
     
+    // MARK: - Properties
+    
     var user: User!
+    
+    // MARK: - Initializers
     
     init(user: User) {
         super.init(nibName: nil, bundle: nil)
@@ -29,16 +33,21 @@ class GFUserInfoHeaderViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        addSubviews()
+        view.addSubviews(avatarImageView, usernameLabel, nameLabel, locationImageView, locationLabel, bioLabel)
+        
         layoutUI()
         configureUIElements()
     }
     
+    // MARK: - UI Configuration
+    
     private func configureUIElements() {
-        avatarImageView.setImage(from: user.avatarUrl ?? "")
+        avatarImageView.setImage(fromURL: user.avatarUrl ?? "")
         usernameLabel.text = user.username
         nameLabel.text = user.name ?? ""
         locationLabel.text = user.location ?? "No Location"
@@ -47,10 +56,6 @@ class GFUserInfoHeaderViewController: UIViewController {
         
         locationImageView.image = SFSymbols.location
         locationImageView.tintColor = .secondaryLabel
-    }
-    
-    private func addSubviews() {
-        view.addSubviews(avatarImageView, usernameLabel, nameLabel, locationImageView, locationLabel, bioLabel)
     }
     
     private func layoutUI() {

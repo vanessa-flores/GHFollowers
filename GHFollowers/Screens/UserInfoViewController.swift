@@ -13,6 +13,8 @@ protocol UserInfoViewControllerDelegate: class {
 
 class UserInfoViewController: GFDataLoadingViewController {
     
+    // MARK: - Views
+    
     let scrollView = UIScrollView()
     let contentView = UIView()
     
@@ -22,9 +24,13 @@ class UserInfoViewController: GFDataLoadingViewController {
     let dateLabel = GFBodyLabel(textAlignment: .center)
     var itemViews: [UIView] = []
     
+    // MARK: - Properties
+    
     var username: String!
     weak var delegate: UserInfoViewControllerDelegate?
 
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,30 +40,12 @@ class UserInfoViewController: GFDataLoadingViewController {
         getUserInfo()
     }
     
-    @objc func dismissViewController() {
-        dismiss(animated: true)
-    }
+    // MARK: - UI Configuration
     
     private func configureViewController() {
         view.backgroundColor = .systemBackground
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissViewController))
         navigationItem.rightBarButtonItem = doneButton
-    }
-    
-    // MARK: - Network Call
-    
-    func getUserInfo() {
-        NetworkManager.shared.getUserInfo(for: username) { [weak self] result in
-            guard let self = self else { return }
-            
-            switch result {
-            case .success(let user):
-                DispatchQueue.main.async { self.configureUIElements(with: user) }
-                
-            case .failure(let error):
-                self.presentGFAlertOnMainThread(title: "Something went wrong.", message: error.rawValue, buttonTitle: "Ok")
-            }
-        }
     }
     
     func configureUIElements(with user: User) {
@@ -78,8 +66,6 @@ class UserInfoViewController: GFDataLoadingViewController {
             contentView.heightAnchor.constraint(equalToConstant: 600)
         ])
     }
-    
-    // MARK: - UI
     
     private func layoutUI() {
         let padding: CGFloat = 20
@@ -102,13 +88,37 @@ class UserInfoViewController: GFDataLoadingViewController {
             itemViewOne.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: padding),
             itemViewOne.heightAnchor.constraint(equalToConstant: itemHeight),
             
-            itemViewTwo.topAnchor.constraint(equalTo: itemViewOne.bottomAnchor, constant: padding), 
+            itemViewTwo.topAnchor.constraint(equalTo: itemViewOne.bottomAnchor, constant: padding),
             itemViewTwo.heightAnchor.constraint(equalToConstant: itemHeight),
             
             dateLabel.topAnchor.constraint(equalTo: itemViewTwo.bottomAnchor, constant: padding),
             dateLabel.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
+    
+    // MARK: - Network
+    
+    func getUserInfo() {
+        NetworkManager.shared.getUserInfo(for: username) { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let user):
+                DispatchQueue.main.async { self.configureUIElements(with: user) }
+                
+            case .failure(let error):
+                self.presentGFAlertOnMainThread(title: "Something went wrong.", message: error.rawValue, buttonTitle: "Ok")
+            }
+        }
+    }
+    
+    // MARK: - Actions
+    
+    @objc func dismissViewController() {
+        dismiss(animated: true)
+    }
+    
+    // MARK: - Helpers
     
     private func add(childViewController: UIViewController, to containerView: UIView) {
         addChild(childViewController)
@@ -124,7 +134,6 @@ extension UserInfoViewController: GFRepoItemViewControllerDelegate, GFFollowerIt
     func didTapGitHubProfile(for user: User) {
         guard let url = URL(string: user.profile ?? "") else {
             presentGFAlertOnMainThread(title: "Invalid URL", message: "The url attached to this user is invalid.", buttonTitle: "Ok")
-            
             return
         }
         
@@ -134,9 +143,9 @@ extension UserInfoViewController: GFRepoItemViewControllerDelegate, GFFollowerIt
     func didTapGetFollowers(for user: User) {
         guard let followers = user.followers, followers > 0 else {
             presentGFAlertOnMainThread(title: "No Followers", message: "This user has no followers. What a shame 😔.", buttonTitle: "So sad")
-            
             return
         }
+        
         delegate?.didRequestFollowers(for: user.username ?? "")
         dismissViewController()
     }

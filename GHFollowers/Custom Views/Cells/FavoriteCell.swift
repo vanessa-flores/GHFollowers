@@ -9,9 +9,16 @@ import UIKit
 
 class FavoriteCell: UITableViewCell {
 
+    // MARK: - Properties
+    
     static let reuseID = "FavoriteCell"
+    
+    // MARK: - Views
+    
     let avatarImageView = GFAvatarImageView(frame: .zero)
     let usernameLabel = GFTitleLabel(textAlignment: .left, fontSize: 26)
+    
+    // MARK: - Initializers
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -22,10 +29,7 @@ class FavoriteCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func set(favorite: Follower) {
-        usernameLabel.text = favorite.username
-        avatarImageView.setImage(from: favorite.avatarURL ?? "")
-    }
+    // MARK: - UI Configuration
     
     private func configure() {
         addSubviews(avatarImageView, usernameLabel)
@@ -44,6 +48,13 @@ class FavoriteCell: UITableViewCell {
             usernameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -padding),
             usernameLabel.heightAnchor.constraint(equalToConstant: 40)
         ])
+    }
+    
+    // MARK: - Helpers
+    
+    func set(favorite: Follower) {
+        usernameLabel.text = favorite.username
+        avatarImageView.setImage(fromURL: favorite.avatarURL ?? "")
     }
     
 }

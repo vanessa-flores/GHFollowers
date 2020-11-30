@@ -233,14 +233,14 @@
 		A35A400F256E9A250010955D /* GHFollowers */ = {
 			isa = PBXGroup;
 			children = (
-				A35972402573EFEF00F3769D /* Managers */,
-				A359720225706D1000F3769D /* Utilities */,
-				A3F3DF4B25703C2C00B1F8A4 /* Model */,
-				A35A404B256F1E680010955D /* Support */,
-				A35A404A256F1DF10010955D /* Extensions */,
 				A35A4049256F1DC10010955D /* Custom Views */,
-				A35A4048256F1D890010955D /* Screens */,
+				A35A404A256F1DF10010955D /* Extensions */,
 				A35A401E256E9A260010955D /* Info.plist */,
+				A35972402573EFEF00F3769D /* Managers */,
+				A3F3DF4B25703C2C00B1F8A4 /* Model */,
+				A35A4048256F1D890010955D /* Screens */,
+				A35A404B256F1E680010955D /* Support */,
+				A359720225706D1000F3769D /* Utilities */,
 			);
 			path = GHFollowers;
 			sourceTree = "<group>";

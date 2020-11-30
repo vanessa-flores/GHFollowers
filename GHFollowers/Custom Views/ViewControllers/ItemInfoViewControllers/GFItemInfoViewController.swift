@@ -9,12 +9,18 @@ import UIKit
 
 class GFItemInfoViewController: UIViewController {
     
+    // MARK: - Views
+    
     let stackView = UIStackView()
     let itemInfoViewOne = GFItemInfoView()
     let itemInfoViewTwo = GFItemInfoView()
     let actionButton = GFButton()
     
+    // MARK: - Properties
+    
     var user: User!
+    
+    // MARK: - Initializers
     
     init(user: User) {
         super.init(nibName: nil, bundle: nil)
@@ -25,6 +31,8 @@ class GFItemInfoViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,6 +41,8 @@ class GFItemInfoViewController: UIViewController {
         layoutUI()
         configureStackView()
     }
+    
+    // MARK: - UI Configuration
     
     private func configureBackgroundView() {
         view.layer.cornerRadius = 18
@@ -50,8 +60,6 @@ class GFItemInfoViewController: UIViewController {
     private func configureActionButton() {
         actionButton.addTarget(self, action: #selector(actionButtonTapped), for: .touchUpInside)
     }
-    
-    @objc func actionButtonTapped() {}
     
     private func layoutUI() {
         view.addSubviews(stackView, actionButton)
@@ -71,5 +79,9 @@ class GFItemInfoViewController: UIViewController {
             actionButton.heightAnchor.constraint(equalToConstant: 44)
         ])
     }
+    
+    // MARK: - Actions
+    
+    @objc func actionButtonTapped() {}
 
 }
