@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol UserInfoViewControllerDelegate: class {
+    func didRequestFollowers(for username: String)
+}
+
 class UserInfoViewController: GFDataLoadingViewController {
     
     let headerView = UIView()
@@ -16,7 +20,7 @@ class UserInfoViewController: GFDataLoadingViewController {
     var itemViews: [UIView] = []
     
     var username: String!
-    weak var delegate: FollowersListViewControllerDelegate?
+    weak var delegate: UserInfoViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
