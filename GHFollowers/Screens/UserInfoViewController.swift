@@ -57,16 +57,9 @@ class UserInfoViewController: GFDataLoadingViewController {
     }
     
     func configureUIElements(with user: User) {
-        let repoItemViewController = GFRepoItemViewController(user: user)
-        repoItemViewController.delegate = self
-        
-        let followerItemViewController = GFFollowerItemViewController(user: user)
-        followerItemViewController.delegate = self
-        
-        
         self.add(childViewController: GFUserInfoHeaderViewController(user: user), to: self.headerView)
-        self.add(childViewController: repoItemViewController, to: self.itemViewOne)
-        self.add(childViewController: followerItemViewController, to: self.itemViewTwo)
+        self.add(childViewController: GFRepoItemViewController(user: user, delegate: self), to: self.itemViewOne)
+        self.add(childViewController: GFFollowerItemViewController(user: user, delegate: self), to: self.itemViewTwo)
         self.dateLabel.text = "GitHub since \(user.createdAt?.convertToMonthYearFormat() ?? "")"
     }
     
